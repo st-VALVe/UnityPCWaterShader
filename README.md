@@ -3,7 +3,7 @@ This project was a test task for Unity technical artist role.
 #### "Task: You are given a terrain mesh with an empty hole. The goal is to create a scene in Unity using that terrain, where clicking inside the hole will fill that hole with water".
 ![screenshot](Screenshots/WaterShaderDemo.gif)
 The return period was only 24 hours.
-So not all code was written from scratch. Some hlsl function libraries have been reused from my previous projects.
+So not all code was written from scratch. Most of hlsl function libraries have been reused from my previous game projects.
 
 This water shader supports:
 1. underwater caustics
