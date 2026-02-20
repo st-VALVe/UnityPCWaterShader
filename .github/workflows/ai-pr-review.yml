@@ -1,0 +1,12 @@
+# managed-by: code-review-hub v2
+name: AI PR Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  review:
+    uses: st-VALVe/code-review-hub/.github/workflows/reusable-pr-review.yml@main
+    secrets:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
