@@ -1,0 +1,32 @@
+# managed-by: code-review-hub v2
+# ────────────────────────────────────────────────────
+# Code Review Hub — Repository Configuration
+# This file is auto-managed by code-review-hub.
+# AI agents can read this file to discover review and
+# quality check endpoints for this repository.
+# ────────────────────────────────────────────────────
+
+hub:
+  repo: "st-VALVe/code-review-hub"
+  url: "https://github.com/st-VALVe/code-review-hub"
+
+# Webhook for receiving quality/review results
+# Configure the actual URL via GitHub Secret: WEBHOOK_URL
+webhook:
+  secret_name: "WEBHOOK_URL"
+  events:
+    - code_quality     # lint, typecheck, tests, security audit results
+    - weekly_review    # weekly AI code review report
+    - workflows_synced # when new workflows are provisioned
+
+# Active quality workflows in this repo
+workflows:
+  ai_pr_review: true       # AI review on every PR (Gemini 3.1 Pro)
+  codeql_analysis: true    # CodeQL security scanning
+  code_quality: true       # lint, typecheck, tests, security audit
+
+# How to subscribe to results:
+# 1. Add WEBHOOK_URL secret to this repo (or org-level)
+# 2. Webhook receives JSON POST for each event above
+# 3. PR comments are posted automatically (no setup needed)
+# 4. Issues are created on critical problems (label: code-quality,automated)
