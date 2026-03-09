@@ -1,41 +1,13 @@
-# managed-by: code-review-hub v2
-name: CodeQL Security Analysis
+# This workflow has been disabled — CodeQL is not needed for this inactive repository.
+# To re-enable, restore the original triggers (push, pull_request, schedule).
+name: CodeQL Security Analysis (disabled)
 
 on:
-  push:
-    branches: [main, master, develop]
-  pull_request:
-    branches: [main, master]
-  schedule:
-    - cron: '0 9 * * 1'
+  workflow_dispatch: # manual trigger only
 
 jobs:
-  analyze:
-    name: Analyze
+  placeholder:
+    if: false
     runs-on: ubuntu-latest
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
-
-    strategy:
-      fail-fast: false
-      matrix:
-        language: ['javascript-typescript']
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
-        with:
-          languages: ${{ matrix.language }}
-
-      - name: Autobuild
-        uses: github/codeql-action/autobuild@v3
-
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v3
-        with:
-          category: "/language:${{matrix.language}}"
+      - run: echo "disabled"
